@@ -3,8 +3,9 @@ import pyfiglet
 
 playerchoice = int(input())
 
-ascii = "ROCK PAPER SICCORS"
+ascii = "R.P.S.L"
 ascii_art= pyfiglet.figlet_format(ascii)
 print(ascii_art)
+
 
 

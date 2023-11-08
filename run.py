@@ -80,58 +80,8 @@ def welcome():
         input(Fore.BLUE + "Press Enter to continue...\033[39m")
 
 
-def start_game():
-    """
-    Function that starts the actual game.
-    """
-    global score
-    while True:
-        computer_choice = random.randint(1, 6)
-        human_choice = int(input(
-            Fore.YELLOW + "Enter Your Choice (Rock=1,Paper=2,Scissors=3,Lizard=4,Spock=5):\033[39m"))
-        result = Compare(computer_choice, human_choice)
-        print(result)
-        play_again = str(
-            input(Fore.CYAN + "Do you want to play again? Y/N:\03[39m").lower())
-        if play_again != 'y':
-            break
-        else:
-            score = [0, 0]
-
-
-def compare(comp, hum):
-    """
-    Compares the choices made by both player and computer.
-    Returns a string with the outcome of the match.
-    """
-    comp_choices = ['rock', 'paper', 'scissors', 'lizard', 'spock']
-    human_choices = ['rock', 'paper', 'scissors', 'lizard', 'spock']
-    comp_name = comp_choices[comp - 1]
-    human_name = human_choices[hum - 1]
-    if comp > 3:
-        comp_name = 'lizard'
-    elif comp < 3:
-        comp_name = 'spock'
-    if hum > 3:
-        human_name = 'lizard'
-    elif hum < 3:
-        human_name = 'spock'
-    if comp == hum:
-        return Fore.GREEN + f"\tIt is a tie! Both chose {human_name}."
-    elif ((comp == 1 and hum in [2, 3]) or (comp == 2 and hum in [1, 3]) or (comp == 3 and hum in [1, 2])):
-        score[0] += 1
-        return Fore.GREEN + f"\tYou win! You chose {human_name}, I chose {comp_name}. \nYour current score is {score[0]} : {score[1]}"
-    else:
-        score[1] += 1
-        return Fore.RED + f"\tI win! I chose {comp_name}, you chose {human_name}. \nMy current score is {score[0]} : {score[1]}"
-
-
 def main():
     welcome()
-    compare()
-    start_game()
-
-
 main()
 
 

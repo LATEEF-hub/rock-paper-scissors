@@ -1,4 +1,4 @@
-from ast import Compare
+
 import time
 import pyfiglet
 import random
@@ -6,6 +6,14 @@ import os
 from time import sleep
 import heading_art
 from colorama import init, Fore, Back, Style
+from enum import Enum
+
+
+
+class RPS(Enum):
+    ROCK = 1
+    PAPER = 2
+    SCISSORS = 3
 
 
 def line_break():
@@ -52,6 +60,7 @@ def rules():
     print("Select your answer by typing one of the options\n"
           "and pressing Enter afterwards.\n")
     line_break()
+    clear()
     input(Fore.BLUE + "Press Enter to continue...\033[39m")
 
 
@@ -85,14 +94,28 @@ def welcome():
         else:
           print(Fore.RED + "ERROR!\033[39m Invalid option please "
               "select 1, 2 or 3\n ")
+          clear()    
           input(Fore.BLUE + "Press Enter to continue...\033[39m")
         # welcome()
+
+
+def player_selection():
+    """
+    Function to get user's selection from keyboard.
+    """
+    user_input = input("Enter a choice (rock[1], paper[2], scissors[3]): ")
+    selection = int(user_input)
+    action = RPS(selection)
+    return action
+
 
 
 def start_game():
     """
     Starts a new game by calling functions to get user choices and compare them with computer choices.
     """
+
+
 
 
 def main():

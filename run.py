@@ -4,9 +4,7 @@ from time import sleep
 import heading_art
 from colorama import init, Fore, Back, Style
 from enum import Enum
-
-
-class RPS(Enum):
+class RPS(Enum): 
     ROCK = 1
     PAPER = 2
     SCISSORS = 3
@@ -16,15 +14,12 @@ victories = {
         RPS.PAPER: [RPS.ROCK],  # Paper beats rock
         RPS.SCISSORS: [RPS.PAPER]  # Scissors beats paper
     }
-   
-
 
 def line_break():
     """
     # To make code less cluttered going forward
     """
     print("=========================================================")
-
 
 def clear():
     """
@@ -33,19 +28,16 @@ def clear():
     sleep(4)
     os.system('clear')
 
-
 def print_logo():
     """
     To print logo
     """
     print(heading_art.logo)
 
-
 def rules():
     """
     This function displays the game's rules.
     """
-
     print(f'\033[2J')
     line_break()
     print(Fore.BLUE + "HOW TO PLAY THE AMAZING ROCK PAPER SCISSORS GAME\033[39m")
@@ -66,14 +58,10 @@ def rules():
     input(Fore.BLUE + "Press Enter to continue...\033[39m")
     clear()
 
-    
-
-
 def welcome():
     """
     Function to display welcome message and Game options for player.
     """
-
     while True:
         sleep(1)
         print_logo()
@@ -104,7 +92,6 @@ def welcome():
           input(Fore.BLUE + "Press Enter to continue...\033[39m")
           clear()
 
-
 def player_selection():
     """
     Function to get user's selection from keyboard.
@@ -115,7 +102,6 @@ def player_selection():
     action = RPS(selection)
     return action
 
-
 def get_computer_selection():
     """
     Function to randomly select computer's move.
@@ -125,6 +111,9 @@ def get_computer_selection():
     return action    
 
 def determine_winner(user_action, computer_action):
+    """
+    Determine who wins based on the game logic.
+    """
     defeats = victories[user_action] 
     if user_action == computer_action:
         print(f"Both players selected {user_action.name}. It's a tie! 😜")
@@ -133,8 +122,10 @@ def determine_winner(user_action, computer_action):
     else:
         print(f"{computer_action.name} beats {user_action.name}! You lose. 😩")
 
-
 def start_game():
+    """
+    Main function of the game.
+    """
     while True:
         try:
             user_choice = player_selection()
@@ -163,6 +154,10 @@ def start_game():
 
 
 def main():
+    """
+    Start the game and display the welcome message.
+    """
+    clear()
     welcome()
 
 main()

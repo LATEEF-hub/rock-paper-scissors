@@ -1,7 +1,6 @@
 from ast import Compare
 import time
 import pyfiglet
-import pprint
 import random
 import os
 from time import sleep
@@ -36,14 +35,22 @@ def rules():
     This function displays the game's rules.
     """
 
-    sleep(3)
-    clear()
     print(f'\033[2J')
-    print(heading_art.logo)
     line_break()
-    print(Fore.MAGENTA + "HOW TO PLAY THE AMAZING RPS GAME\033[39m")
+    print(Fore.BLUE + "HOW TO PLAY THE AMAZING ANIMAL QUIZ\033[39m")
     line_break()
-    print("Lorem ipsimhhdbfb hidsb hd cbhd cbhs dchhd dh dhhds d dhhs d bshjjhd dhhs dfshb d . dhhs dhhsbbvf d")
+    print("Rock Paper Scissors (RPS) is a zero-sum game, typically played by two people using their hands and no tools.\n"
+          "Players make hand shapes, each with a certain degree of power, ultimately leading to an outcome.\n")
+    print("There are three options ROCK PAPER & SCISSORS\n")
+    print("ROCK: The rock is when you place your hand into the form of a simple fist.\n")
+    print("PAPER: The paper is when you place your hand in an outstretched position.\n")
+    print("SCISSORS: This is when you hold your fist with your index and middle finger pointing outwards in a V shape.\n")
+    line_break()
+    print("Rock wins against scissors.\n"
+          "Scissors win against paper.\n"
+          "Paper wins against rock.\n")
+    print("Select your answer by typing one of the options\n"
+          "and pressing Enter afterwards.\n")
     line_break()
     input(Fore.BLUE + "Press Enter to continue...\033[39m")
 
@@ -53,82 +60,45 @@ def welcome():
     Function to display welcome message and Game options for player.
     """
 
-    # clear()
-    sleep(5)
-    print_logo()
-    sleep(5)
-    print("Welcome to Rock, Paper, Scissors, Lizard, Spock Game\n\tYou have the following options:\n")
-    print("\t1) Start Game\n\t2) Rules of the Game \n\t3) Exit Game")
-    choice = int(
+    while True:
+        sleep(1)
+        print_logo()
+        sleep(1)
+        print("Welcome to Rock, Paper, Scissors, Lizard, Spock Game\n\tYou have the following options:\n")
+        print("\t1) Start Game\n\t2) Rules of the Game \n\t3) Exit Game")
+        choice = int(
         input(Fore.BLUE + "Select your option between 1, 2 and 3:\n"))
-    if choice == 1:
-        print(Fore.GREEN+"Starting RPS Game...")
-        sleep(2)
-        start_game()
-    elif choice == 2:
-        print("Opening the Rules Book...")
-        clear()
-        rules()
-    elif choice == 3:
-        print(Fore.WHITE + "\nExiting The Game...")
-        clear()
-        print("Click on Run Program above to restart again!")
+        if choice == 1:
+           print(Fore.GREEN+"Starting RPS Game...")
+           sleep(2)
+           start_game()
+        elif choice == 2:
+           print("Opening the Rules Book...")
+           clear()
+           rules()
+        elif choice == 3:
+           print(Fore.WHITE + "\nExiting The Game...")
+           clear()
+           print("Click on Run Program above to restart again!")
+           break
 
-    else:
-        print(Fore.RED + "ERROR!\033[39m Invalid option please "
+        else:
+          print(Fore.RED + "ERROR!\033[39m Invalid option please "
               "select 1, 2 or 3\n ")
-        input(Fore.BLUE + "Press Enter to continue...\033[39m")
+          input(Fore.BLUE + "Press Enter to continue...\033[39m")
+        # welcome()
+
+
+def start_game():
+    """
+    Starts a new game by calling functions to get user choices and compare them with computer choices.
+    """
 
 
 def main():
     welcome()
+
 main()
-
-
-# def welcome():
-#     """
-#     Display welcome message and game options
-#     """
-#     choice = ""
-
-#     clear()
-#     print_logo()
-#     print("Welcome to Rock, Paper, Scissors, Lizard, Spock Game\n\tYou have the following options:\n")
-#     print("\t1)Start Game")
-#     print("\t2)Rules of the game")
-#     print("\t3)Exit")
-#     while True:
-#             choice = int(input(Fore.BLUE + "Select your option between (1/2/3):"))
-#             if choice == 1:
-#                 print(Fore.GREEN + "Starting RPS Game...")
-#             elif choice == 2:
-#                 print(Fore.CYAN + "Opening RPS Rules...")
-#                 sleep(5)
-#                 rules()
-#             elif choice == 3:
-#                 print("Game Exited to restart the game, click on Run Program"
-#                   " above")
-#                 break
-#             else:
-#                 print(Fore.RED + "\nERROR!\033[39m Invalid option please "
-#                   "select 1, 2, 3 or 4\n ")
-#                 input(Fore.BLUE + "Press Enter to continue...\033[39m")
-
-
-# def rules():
-#     """
-
-
-#     choice = input(Fore.BLUE + "Enter your choice : ").strip().lower()
-
-#     if choice == "1":
-#         print("Opening the rulebook...")
-#         sleep(5)
-#         rules()
-#     else:
-#         print(Fore.RED + "ERROR!\033[39m Invalid option please "
-#               "select 1, 2, 3 or 4\n ")
-#         input(Fore.BLUE + "Press Enter to continue...\033[39m")
 
 
 # def play_again():

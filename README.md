@@ -28,7 +28,7 @@
 
 - If the player picked an option that's out of the range of the Options, the Game will respond with "Invalid error" message and prompt the user to enter the correct option in range of the available option.
 
-![Incorrect Answer](assets/screenshots/invalid_options) 
+![Incorrect Answer](assets/screenshots/invalid_option.png) 
 
 -When the user select the Start game option, they will be presented with the three available game option of: ROCK, PAPER, SCISSIORS... If user pick outside of these options an error message will show up that the option selected is not an RPS game option. The game will continue with the question until user have made the right choice between the options
 

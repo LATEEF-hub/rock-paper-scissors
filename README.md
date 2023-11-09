@@ -1,6 +1,6 @@
 # **RPS Game**
 
-**RPS Game** is a simple command-line option game that will be played aganist computer. 
+**RPS Game** is a simple command-line option game that will be played aganist computer. Rock Paper Scissors (RPS) is a zero-sum game, typically played by two people using their hands and no tools. Players make hand shapes, each with a certain degree of power, ultimately leading to an outcome. RPS is popular worldwide, played by children and adults alike, and often used to make decisions where no room for cheating or predicting the other person’s move is allowed. 
 
 [Link to live project](https://rock-paper-34a789df3127.herokuapp.com/)
 

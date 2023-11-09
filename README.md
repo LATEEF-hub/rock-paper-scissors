@@ -78,6 +78,10 @@ If no the game will goes back to the welcome screen and display "Thanks for play
 - Because input() returns a string, I need to convert the return value to an integer using int(). Then, I can compare the input to each of the actions. This works well, but it might rely on me naming variables correctly in order to keep track of them. A better way is to use enum.IntEnum and define my own action class!
 - Using enum.Enum allows me to create attributes and assign them values similar to those shown in the game. This helps clean up my code by grouping actions into their own namespaces and making the code more expressive.
 
+## Remaining Bugs:
+
+- No Bugs remaining 
+
 ## Deployment:
 
 This project was deployed using Heroku. 
